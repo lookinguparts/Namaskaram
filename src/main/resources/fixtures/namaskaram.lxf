@@ -1,0 +1,40 @@
+{
+  "label": "Mesh Fixture",
+  "tags": ["mesh", "child-fixture"],
+  "components": [],
+  "outputs": [],
+  "transforms": [
+    {
+      "type": "transform",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0,
+      "sx": 1.0,
+      "sy": 1.0,
+      "sz": 1.0
+    }
+  ],
+  "ui": {
+    "mesh": {
+      "type": "phong",
+      "color": "0xff660000",
+      "file": "namaskaram.obj",
+      "lighting": {
+        "ambient": 0.1,
+        "diffuse": 0.5,
+        "specular": 0.5,
+        "shininess": 64,
+        "color": "0xffffffff",
+        "direction": { "x": 1, "y": -1, "z": 0 }
+      }
+    }
+  },
+  "meta": {
+    "generated": "CsvToLxfConverterSimple",
+    "type": "mesh-child-fixture",
+    "meshFile": "namaskaram.obj"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  name: "Namaskaram",
+  mediaDir: "Namaskaram",
+  author: "Tracy Scott",
+  url: "https://github.com/lookinguparts/Namaskaram",
+  
+  build: {
+    name: "@project.name@",
+    version: "@project.version@",
+    groupId: "@project.groupId@",
+    artifactId: "@project.artifactId@",
+    lxVersion: "@lx.version@",
+    buildTimestamp: "@maven.build.timestamp@"
+  }
+}
