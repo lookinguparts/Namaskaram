@@ -1,0 +1,82 @@
+/*{
+	"DESCRIPTION": "Rainbow Semicircle",
+	"CREDIT": "by tracyscott",
+	"ISFVSN": "2.0",
+	"CATEGORIES": [
+		"VERTEX SDF"
+	],
+	"INPUTS": [
+        {
+            "NAME": "startRadius",
+            "TYPE": "float",
+            "DEFAULT": 0.2,
+            "MIN": 0.0,
+            "MAX": 1.0
+        },
+        {
+            "NAME": "thickness",
+            "TYPE": "float",
+            "DEFAULT": 0.1,
+            "MIN": 0.01,
+            "MAX": 0.5
+        },
+        {
+            "NAME": "brt",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": 0.1,
+            "MAX": 5.0
+        }
+	]
+}*/
+
+#version 330
+
+uniform float fTime;
+uniform float startRadius;
+uniform float thickness;
+uniform float brt;
+
+layout(location = 0) in vec3 position;
+out vec3 outColor;
+
+#include <consts.vti>
+
+// Rainbow colors from RainbowColor.java
+vec3 rainbowColors[6] = vec3[6](
+    vec3(1.0, 0.0, 0.0),        // RED
+    vec3(1.0, 0.498, 0.0),      // ORANGE (0xff7f00 -> 0x7f = 127/255 ≈ 0.498)
+    vec3(1.0, 1.0, 0.0),        // YELLOW
+    vec3(0.0, 1.0, 0.0),        // GREEN
+    vec3(0.0, 0.0, 1.0),        // BLUE
+    vec3(0.545, 0.0, 1.0)       // VIOLET (0x8b00ff -> 0x8b = 139/255 ≈ 0.545)
+);
+
+void main(){
+    vec2 uv = position.xy - 0.5;
+    vec3 color = vec3(0.0);
+    
+    float radius = length(uv);
+    
+    // Only render in upper half (y > 0) and beyond startRadius
+    if (uv.y > 0.0 && radius > startRadius && radius < startRadius + thickness) {
+        // Map distance within the rainbow band to colors
+        float bandPosition = (radius - startRadius) / thickness;
+        float colorIndex = bandPosition * 5.0; // 5 transitions for 6 colors
+        colorIndex = clamp(colorIndex, 0.0, 5.0);
+        
+        int index = int(floor(colorIndex));
+        float t = fract(colorIndex);
+        
+        // Interpolate between rainbow colors based on position in band
+        if (index < 5) {
+            color = mix(rainbowColors[index], rainbowColors[index + 1], t);
+        } else {
+            color = rainbowColors[5];
+        }
+        
+        color *= brt;
+    }
+    
+    outColor = color;
+}

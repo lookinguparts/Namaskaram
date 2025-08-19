@@ -1,41 +1,44 @@
+package art.lookingup.namaskaram.util;
+
+import heronarts.lx.LX;
 import org.shredzone.commons.suncalc.MoonIllumination;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 public class MoonCalc {
     public static float getIllumination() {
         // Get current moon phase information
+        ZonedDateTime now = ZonedDateTime.now();
         MoonIllumination moon = MoonIllumination.compute()
-                .on(LocalDateTime.now())
-                .timezone(ZoneId.systemDefault())
+                .on(now)
                 .execute();
         
         return (float) (moon.getFraction() * 100);
     }
 
     public static double getPhaseAngle() {
+        ZonedDateTime now = ZonedDateTime.now();
         // Get current moon phase information
         MoonIllumination moon = MoonIllumination.compute()
-                .on(LocalDateTime.now())
-                .timezone(ZoneId.systemDefault())
+                .on(now)
                 .execute();
-        
-        return Math.toDegrees(moon.getPhase());
+
+        return moon.getPhase();
     }
 
     public static void debug() {
+        ZonedDateTime now = ZonedDateTime.now();
         // Get current moon phase information
         MoonIllumination moon = MoonIllumination.compute()
-                .on(LocalDateTime.now())
-                .timezone(ZoneId.systemDefault())
+                .on(now)
                 .execute();
         
         double illumination = moon.getFraction() * 100;
-        double phaseAngle = Math.toDegrees(moon.getPhase());
-        
-        System.out.printf("Moon is %.1f%% illuminated\n", illumination);
-        System.out.printf("Phase angle: %.1f degrees\n", phaseAngle);
-        
+        double phaseAngle = moon.getPhase();
+
+        LX.log("Moon is illuminated " + illumination);
+        LX.log("Phase angle degrees:" + phaseAngle);
+
+        phaseAngle += 180f; // Normalize to 0-360 degrees
         // Determine phase name
         String phaseName;
         if (phaseAngle < 22.5 || phaseAngle >= 337.5) {
@@ -56,6 +59,6 @@ public class MoonCalc {
             phaseName = "Waning Crescent";
         }
         
-        System.out.println("Current phase: " + phaseName);
+        LX.log("Current phase: " + phaseName);
     }
 }
