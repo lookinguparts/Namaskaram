@@ -1,0 +1,56 @@
+/*{
+	"DESCRIPTION": "default",
+	"CREDIT": "by tracyscott",
+	"ISFVSN": "2.0",
+	"CATEGORIES": [
+		"VERTEX SDF"
+	],
+	"INPUTS": [
+         {
+            "NAME": "x1",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": -5.0,
+            "MAX": 5.0
+         },
+         {
+            "NAME": "y1",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": -1.0,
+            "MAX": 1.0
+         },
+         {
+            "NAME": "radius",
+            "TYPE": "float",
+            "DEFAULT": 0.5,
+            "MIN": 0.0,
+            "MAX": 1.0
+         }
+	]
+}*/
+
+#version 330
+
+uniform float fTime;
+uniform float x1;
+uniform float y1;
+uniform float radius;
+
+layout(location = 0) in vec3 position;
+out vec3 outColor;
+
+void main(){
+    vec2 uv = 2. * position.xy - 1.;
+
+    // Check if vertex is inside the circle
+    vec2 center = vec2(x1, y1);
+    float distFromCenter = length(uv - center);
+    
+    if (distFromCenter <= radius) {
+        // Inside the circle - make it white
+        outColor = vec3(1.0, 1.0, 1.0);
+    } else {
+        outColor = vec3(0.0, 0.0, 0.0);
+    }
+}
