@@ -1,6 +1,6 @@
 {
   "version": "1.1.1-SNAPSHOT",
-  "timestamp": 1755600243535,
+  "timestamp": 1755604302834,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -81,7 +81,7 @@
       {
         "jsonFixtureType": "Namaskaram/bindi_fixed",
         "jsonParameters": {
-          "hostname": "127.0.0.1"
+          "hostname": "192.168.8.170"
         },
         "id": 182109,
         "class": "heronarts.lx.structure.JsonFixture",
@@ -103,7 +103,7 @@
           "pointSize": 5.0,
           "selected": true,
           "deactivate": false,
-          "enabled": false,
+          "enabled": true,
           "brightness": 1.0,
           "identify": false,
           "mute": false,
@@ -917,7 +917,7 @@
           "crossfader": 0.5,
           "crossfaderBlendMode": 0,
           "focusedChannel": 0,
-          "focusedChannelAux": 0,
+          "focusedChannelAux": 1,
           "cueA": false,
           "cueB": false,
           "auxA": false,
@@ -1151,7 +1151,7 @@
                   "transitionEnabled": true,
                   "transitionTimeSecs": 2.0,
                   "transitionBlendMode": 0,
-                  "focusedPattern": 3,
+                  "focusedPattern": 0,
                   "triggerPatternCycle": false,
                   "launchPatternCycle": false
                 },
@@ -1280,7 +1280,7 @@
                           "autoMute": true,
                           "cueActive": false,
                           "auxActive": false,
-                          "phase": 0.9936437010765076,
+                          "phase": 0.20166641473770142,
                           "animate": true,
                           "speed": 0.1,
                           "holdTime": 13.410156542668117,
@@ -1341,7 +1341,7 @@
                           "cueActive": false,
                           "auxActive": false,
                           "scriptName": "CkVShader/shaders/texture.vtx",
-                          "frameDir": "/Users/tracyscott/Chromatik/Data/Namaskaram/moonframes",
+                          "frameDir": "/home/lua/Chromatik/Data/Namaskaram/moonframes",
                           "speed": 1.0,
                           "alfTh": -0.10000000149011612,
                           "x1": 0.0,
@@ -1547,7 +1547,7 @@
                           "cueActive": false,
                           "auxActive": false,
                           "scriptName": "CkVShader/shaders/texture.vtx",
-                          "frameDir": "/Users/tracyscott/Chromatik/Data/Namaskaram/eyeball",
+                          "frameDir": "/home/lua/Chromatik/Data/Namaskaram/eyeball",
                           "speed": 1.0,
                           "alfTh": -0.10000000149011612,
                           "x1": 0.0,
@@ -1612,7 +1612,7 @@
                                   "exp": 0.0
                                 },
                                 "children": {},
-                                "basis": 0.7482231340067356
+                                "basis": 0.43533550410850996
                               }
                             ],
                             "modulations": [
@@ -1737,7 +1737,7 @@
                                   "triggerOut": false
                                 },
                                 "children": {},
-                                "basis": 0.6434485872985702
+                                "basis": 0.006340556399969666
                               }
                             ],
                             "modulations": [],
@@ -1876,7 +1876,7 @@
                       "transitionEnabled": false,
                       "transitionTimeSecs": 5.0,
                       "transitionBlendMode": 0,
-                      "focusedPattern": 0,
+                      "focusedPattern": 1,
                       "triggerPatternCycle": false,
                       "launchPatternCycle": false
                     },
@@ -1936,7 +1936,7 @@
                           "cueActive": false,
                           "auxActive": false,
                           "scriptName": "CkVShader/shaders/texture.vtx",
-                          "frameDir": "/Users/tracyscott/Chromatik/Data/Namaskaram/moonframes",
+                          "frameDir": "/home/lua/Chromatik/Data/Namaskaram/moonframes",
                           "speed": 1.0,
                           "alfTh": -0.10000000149011612,
                           "x1": 0.0,
@@ -1944,7 +1944,7 @@
                           "zoomx": 1.0,
                           "zoomy": 1.0,
                           "rotspd": 0.0,
-                          "frame": 117.0,
+                          "frame": 111.31579030305147,
                           "compositeMode": 0
                         },
                         "children": {
@@ -2004,9 +2004,9 @@
                           "scriptName": "Namaskaram/shaders/eclipse.vtx",
                           "speed": 1.020204740576446,
                           "alfTh": -0.10000000149011612,
-                          "x1": -3.799838234917843,
-                          "y1": 0.20487607596442103,
-                          "radius": 0.9838025325443596,
+                          "x1": -3.2241379525512457,
+                          "y1": 0.2,
+                          "radius": 0.98,
                           "compositeMode": 1
                         },
                         "children": {
@@ -2063,7 +2063,7 @@
                                   "exp": 0.0
                                 },
                                 "children": {},
-                                "basis": 0.4728861871901978
+                                "basis": 0.7067474156667168
                               }
                             ],
                             "modulations": [
@@ -2077,7 +2077,7 @@
                                   "parameterPath": "x1",
                                   "path": "/x1"
                                 },
-                                "id": 188848,
+                                "id": 208097,
                                 "class": "heronarts.lx.modulation.LXCompoundModulation",
                                 "internal": {
                                   "modulationColor": 0,
@@ -2089,7 +2089,7 @@
                                   "enabled": true,
                                   "polarity": 0,
                                   "polarity/name": "UNIPOLAR",
-                                  "range": 0.8540624990127981
+                                  "range": 0.8599999807775021
                                 },
                                 "children": {}
                               }
@@ -2272,7 +2272,7 @@
                   "transitionEnabled": true,
                   "transitionTimeSecs": 2.0,
                   "transitionBlendMode": 0,
-                  "focusedPattern": 2,
+                  "focusedPattern": 3,
                   "triggerPatternCycle": false,
                   "launchPatternCycle": false
                 },
@@ -2296,7 +2296,7 @@
                 },
                 "deviceVersion": -1,
                 "effects": [],
-                "patternIndex": 0,
+                "patternIndex": 3,
                 "patterns": [
                   {
                     "id": 191963,
@@ -2711,7 +2711,7 @@
                 },
                 "deviceVersion": -1,
                 "effects": [],
-                "patternIndex": 0,
+                "patternIndex": 3,
                 "patterns": [
                   {
                     "id": 206858,
@@ -3032,7 +3032,7 @@
                   "transitionEnabled": true,
                   "transitionTimeSecs": 2.0,
                   "transitionBlendMode": 0,
-                  "focusedPattern": 3,
+                  "focusedPattern": 0,
                   "triggerPatternCycle": false,
                   "launchPatternCycle": false
                 },
@@ -3056,7 +3056,7 @@
                 },
                 "deviceVersion": -1,
                 "effects": [],
-                "patternIndex": 3,
+                "patternIndex": 0,
                 "patterns": [
                   {
                     "id": 206955,
@@ -3102,7 +3102,7 @@
                       "transitionEnabled": false,
                       "transitionTimeSecs": 5.0,
                       "transitionBlendMode": 0,
-                      "focusedPattern": 1,
+                      "focusedPattern": 0,
                       "triggerPatternCycle": false,
                       "launchPatternCycle": false
                     },
@@ -3368,9 +3368,9 @@
                       "scriptName": "Namaskaram/shaders/rainbow.vtx",
                       "speed": 2.4380388017743826,
                       "alfTh": -0.10000000149011612,
+                      "startRadius": 0.2127599706687033,
                       "thickness": 0.4,
                       "brt": 5.0,
-                      "startRadius": 0.2127599706687033,
                       "compositeMode": 0
                     },
                     "children": {
@@ -3609,6 +3609,194 @@
                 ]
               }
             ]
+          },
+          {
+            "id": 209078,
+            "class": "heronarts.lx.mixer.LXChannel",
+            "internal": {
+              "modulationColor": 0,
+              "modulationControlsExpanded": true,
+              "modulationsExpanded": true,
+              "controlsExpandedCue": true,
+              "controlsExpandedAux": true,
+              "modulationExpanded": false,
+              "controlsExpanded": true,
+              "viewPatternLabel": false
+            },
+            "parameters": {
+              "label": "Test",
+              "fader": 0.0,
+              "arm": false,
+              "selected": false,
+              "stopClips": false,
+              "enabled": true,
+              "cue": false,
+              "aux": false,
+              "crossfadeGroup": 0,
+              "crossfadeGroup/name": "BYPASS",
+              "blendMode": 0,
+              "autoMute": true,
+              "midiSource/index": 0,
+              "midiFilter/enabled": false,
+              "midiFilter/channel": 16,
+              "midiFilter/channel/name": "OMNI",
+              "midiFilter/minNote": 0,
+              "midiFilter/noteRange": 128,
+              "midiFilter/minVelocity": 1,
+              "midiFilter/velocityRange": 127,
+              "view": 0,
+              "compositeMode": 0,
+              "compositeMode/name": "PLAYLIST",
+              "compositeDampingEnabled": true,
+              "compositeDampingTimeSecs": 0.1,
+              "autoCycleEnabled": false,
+              "autoCycleMode": 0,
+              "autoCycleMode/name": "NEXT",
+              "autoCycleTimeSecs": 60.0,
+              "transitionEnabled": false,
+              "transitionTimeSecs": 5.0,
+              "transitionBlendMode": 0,
+              "focusedPattern": 0,
+              "triggerPatternCycle": false,
+              "launchPatternCycle": false
+            },
+            "children": {
+              "modulation": {
+                "id": 209079,
+                "class": "heronarts.lx.modulation.LXModulationEngine",
+                "internal": {
+                  "modulationColor": 0,
+                  "modulationControlsExpanded": true,
+                  "modulationsExpanded": true
+                },
+                "parameters": {
+                  "label": "Modulation"
+                },
+                "children": {},
+                "modulators": [],
+                "modulations": [],
+                "triggers": []
+              }
+            },
+            "effects": [],
+            "clips": [],
+            "patternIndex": 0,
+            "patterns": [
+              {
+                "id": 209097,
+                "class": "art.lookingup.namaskaram.patterns.Orientation",
+                "internal": {
+                  "modulationColor": 0,
+                  "modulationControlsExpanded": true,
+                  "modulationsExpanded": true,
+                  "expanded": true,
+                  "expandedCue": true,
+                  "expandedAux": true,
+                  "modulationExpanded": false
+                },
+                "parameters": {
+                  "label": "Orientation",
+                  "midiFilter/enabled": true,
+                  "midiFilter/channel": 16,
+                  "midiFilter/channel/name": "OMNI",
+                  "midiFilter/minNote": 0,
+                  "midiFilter/noteRange": 128,
+                  "midiFilter/minVelocity": 1,
+                  "midiFilter/velocityRange": 127,
+                  "view": 0,
+                  "viewPriority": 0,
+                  "enabled": true,
+                  "recall": false,
+                  "launch": false,
+                  "compositeBlend": 0,
+                  "compositeLevel": 1.0,
+                  "hasCustomCycleTime": false,
+                  "customCycleTimeSecs": 60.0,
+                  "autoMute": true,
+                  "cueActive": false,
+                  "auxActive": false,
+                  "width": 0.1,
+                  "compositeMode": 0
+                },
+                "children": {
+                  "modulation": {
+                    "id": 209098,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0,
+                      "modulationControlsExpanded": true,
+                      "modulationsExpanded": true
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1,
+                "effects": []
+              },
+              {
+                "id": 209110,
+                "class": "art.lookingup.namaskaram.patterns.Output",
+                "internal": {
+                  "modulationColor": 0,
+                  "modulationControlsExpanded": true,
+                  "modulationsExpanded": true,
+                  "expanded": true,
+                  "expandedCue": true,
+                  "expandedAux": true,
+                  "modulationExpanded": false
+                },
+                "parameters": {
+                  "label": "Output",
+                  "midiFilter/enabled": true,
+                  "midiFilter/channel": 16,
+                  "midiFilter/channel/name": "OMNI",
+                  "midiFilter/minNote": 0,
+                  "midiFilter/noteRange": 128,
+                  "midiFilter/minVelocity": 1,
+                  "midiFilter/velocityRange": 127,
+                  "view": 0,
+                  "viewPriority": 0,
+                  "enabled": true,
+                  "recall": false,
+                  "launch": false,
+                  "compositeBlend": 0,
+                  "compositeLevel": 1.0,
+                  "hasCustomCycleTime": false,
+                  "customCycleTimeSecs": 60.0,
+                  "autoMute": true,
+                  "cueActive": false,
+                  "auxActive": false,
+                  "Pos": 0,
+                  "compositeMode": 0
+                },
+                "children": {
+                  "modulation": {
+                    "id": 209111,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0,
+                      "modulationControlsExpanded": true,
+                      "modulationsExpanded": true
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1,
+                "effects": []
+              }
+            ]
           }
         ]
       },
@@ -3666,7 +3854,7 @@
         },
         "parameters": {
           "label": "Output",
-          "enabled": false,
+          "enabled": true,
           "brightness": 1.0,
           "fps": 0.0,
           "gamma": 1.0,
@@ -3769,930 +3957,12 @@
         "children": {},
         "inputs": [],
         "outputs": []
-      },
-      "empirecues": {
-        "id": 105,
-        "class": "org.projectempire.lx.osc.OscCuePlugin",
-        "internal": {
-          "modulationColor": 0,
-          "modulationControlsExpanded": true,
-          "modulationsExpanded": true
-        },
-        "parameters": {
-          "label": "OscCuePlugin"
-        },
-        "children": {}
-      },
-      "cospalette": {
-        "id": 106,
-        "class": "org.projectempire.lx.color.CosPalette",
-        "internal": {
-          "modulationColor": 0,
-          "modulationControlsExpanded": true,
-          "modulationsExpanded": true
-        },
-        "parameters": {
-          "label": "CosPalette",
-          "paletteLabel": "",
-          "performanceMode": false,
-          "swatchIndex": 2,
-          "hue": 60.0,
-          "saturation": 100.0,
-          "brightness": 100.0,
-          "aR": 1.5454204315694238,
-          "aG": 0.8015198092615332,
-          "aB": 0.3197252361997718,
-          "bR": 1.204118642833512,
-          "bG": 0.4428096667060446,
-          "bB": 0.6401860531373988,
-          "cR": 1.102610765046057,
-          "cG": 1.67095672179782,
-          "cB": 1.6050011255825707,
-          "dR": -0.7007475176466431,
-          "dG": 0.0,
-          "dB": 0.5107267623539355
-        },
-        "children": {
-          "swatch-0": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-1": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-2": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-3": {
-            "id": 104570,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-4": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-5": {
-            "id": 104570,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-6": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-7": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-8": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-9": {
-            "id": 106468,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-10": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-11": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-12": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-13": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-14": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-15": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-16": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-17": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-18": {
-            "id": 106468,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-19": {
-            "id": 188705,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-20": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-21": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-22": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-23": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-24": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-25": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-26": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-27": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-28": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-29": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-30": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-31": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-32": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-33": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-34": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-35": {
-            "id": 188705,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-36": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-37": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-38": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-39": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-40": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-41": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-42": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-43": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-44": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-45": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-46": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-47": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-48": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-49": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-50": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-51": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-52": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-53": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-54": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-55": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-56": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-57": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-58": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-59": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-60": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-61": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-62": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-63": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-64": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-65": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Default",
-              "aR": 0.0,
-              "aG": 0.0,
-              "aB": 0.0,
-              "bR": 0.0,
-              "bG": 0.0,
-              "bB": 0.0,
-              "cR": 0.0,
-              "cG": 0.0,
-              "cB": 0.0,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          "swatch-66": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Fire",
-              "aR": 3.13840734641021,
-              "aG": 0.0,
-              "aB": 0.0,
-              "bR": 2.22140395306873,
-              "bG": 0.6465609562072276,
-              "bB": 0.0,
-              "cR": 3.0699998639386603,
-              "cG": 3.1057973329856177,
-              "cB": 0.0,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          "swatch-67": {
-            "id": 188705,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 3",
-              "aR": 1.5454204315694238,
-              "aG": 0.8015198092615332,
-              "aB": 0.3197252361997718,
-              "bR": 1.204118642833512,
-              "bG": 0.4428096667060446,
-              "bB": 0.6401860531373988,
-              "cR": 1.102610765046057,
-              "cG": 1.67095672179782,
-              "cB": 1.6050011255825707,
-              "dR": -0.7007475176466431,
-              "dG": 0.0,
-              "dB": 0.5107267623539355
-            },
-            "children": {}
-          },
-          "swatch-68": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 4",
-              "aR": 3.13840734641021,
-              "aG": 0.0,
-              "aB": 0.0,
-              "bR": 2.22140395306873,
-              "bG": 0.6465609562072276,
-              "bB": 0.6401860531373988,
-              "cR": 3.0699998639386603,
-              "cG": 3.1057973329856177,
-              "cB": 0.7561600193826785,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          "swatch-69": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 5",
-              "aR": -0.49350120783549345,
-              "aG": -2.4208279411730294,
-              "aB": -0.4025125310741866,
-              "bR": 3.119121420881223,
-              "bG": -0.7515278589033088,
-              "bB": 2.253450171781969,
-              "cR": -1.4919378045128364,
-              "cG": -0.6364617154590779,
-              "cB": 1.957381247604558,
-              "dR": -3.0705130158877982,
-              "dG": 2.161715870195966,
-              "dB": -1.555437343355907
-            },
-            "children": {}
-          },
-          "swatch-70": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 6",
-              "aR": -2.682448969216446,
-              "aG": -1.1070050307153894,
-              "aB": 1.6991968215206859,
-              "bR": 0.9424393704433971,
-              "bG": -3.049635046018851,
-              "bB": 2.465633634857652,
-              "cR": -2.322252094322372,
-              "cG": -2.636823124936563,
-              "cB": -2.8575347789384873,
-              "dR": 2.1187723729508594,
-              "dG": 2.966926117986082,
-              "dB": 0.8370619452908472
-            },
-            "children": {}
-          },
-          "swatch-71": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 7",
-              "aR": 0.0,
-              "aG": 0.34,
-              "aB": 0.91,
-              "bR": 0.31,
-              "bG": 0.59,
-              "bB": 3.13840734641021,
-              "cR": 1.65,
-              "cG": 1.2,
-              "cB": 1.2,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          "swatch-72": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 8",
-              "aR": 0.5495541880285542,
-              "aG": 0.015459755696812572,
-              "aB": 2.4401598361253187,
-              "bR": 1.039935201993286,
-              "bG": 1.074927806779728,
-              "bB": 2.2884309755427825,
-              "cR": 1.065246176859902,
-              "cG": -1.5454409231477952,
-              "cB": -2.0560547807188962,
-              "dR": 0.006658405866993622,
-              "dG": -1.155368450325858,
-              "dB": 1.6334608346637127
-            },
-            "children": {}
-          }
-        },
-        "swatches": [
-          {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Default",
-              "aR": 0.0,
-              "aG": 0.0,
-              "aB": 0.0,
-              "bR": 0.0,
-              "bG": 0.0,
-              "bB": 0.0,
-              "cR": 0.0,
-              "cG": 0.0,
-              "cB": 0.0,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Fire",
-              "aR": 3.13840734641021,
-              "aG": 0.0,
-              "aB": 0.0,
-              "bR": 2.22140395306873,
-              "bG": 0.6465609562072276,
-              "bB": 0.0,
-              "cR": 3.0699998639386603,
-              "cG": 3.1057973329856177,
-              "cB": 0.0,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          {
-            "id": 188705,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 3",
-              "aR": 1.5454204315694238,
-              "aG": 0.8015198092615332,
-              "aB": 0.3197252361997718,
-              "bR": 1.204118642833512,
-              "bG": 0.4428096667060446,
-              "bB": 0.6401860531373988,
-              "cR": 1.102610765046057,
-              "cG": 1.67095672179782,
-              "cB": 1.6050011255825707,
-              "dR": -0.7007475176466431,
-              "dG": 0.0,
-              "dB": 0.5107267623539355
-            },
-            "children": {}
-          },
-          {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 4",
-              "aR": 3.13840734641021,
-              "aG": 0.0,
-              "aB": 0.0,
-              "bR": 2.22140395306873,
-              "bG": 0.6465609562072276,
-              "bB": 0.6401860531373988,
-              "cR": 3.0699998639386603,
-              "cG": 3.1057973329856177,
-              "cB": 0.7561600193826785,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 5",
-              "aR": -0.49350120783549345,
-              "aG": -2.4208279411730294,
-              "aB": -0.4025125310741866,
-              "bR": 3.119121420881223,
-              "bG": -0.7515278589033088,
-              "bB": 2.253450171781969,
-              "cR": -1.4919378045128364,
-              "cG": -0.6364617154590779,
-              "cB": 1.957381247604558,
-              "dR": -3.0705130158877982,
-              "dG": 2.161715870195966,
-              "dB": -1.555437343355907
-            },
-            "children": {}
-          },
-          {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 6",
-              "aR": -2.682448969216446,
-              "aG": -1.1070050307153894,
-              "aB": 1.6991968215206859,
-              "bR": 0.9424393704433971,
-              "bG": -3.049635046018851,
-              "bB": 2.465633634857652,
-              "cR": -2.322252094322372,
-              "cG": -2.636823124936563,
-              "cB": -2.8575347789384873,
-              "dR": 2.1187723729508594,
-              "dG": 2.966926117986082,
-              "dB": 0.8370619452908472
-            },
-            "children": {}
-          },
-          {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 7",
-              "aR": 0.0,
-              "aG": 0.34,
-              "aB": 0.91,
-              "bR": 0.31,
-              "bG": 0.59,
-              "bB": 3.13840734641021,
-              "cR": 1.65,
-              "cG": 1.2,
-              "cB": 1.2,
-              "dR": 0.0,
-              "dG": 0.0,
-              "dB": 0.0
-            },
-            "children": {}
-          },
-          {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Swatch",
-              "swatchLabel": "Swatch 8",
-              "aR": 0.5495541880285542,
-              "aG": 0.015459755696812572,
-              "aB": 2.4401598361253187,
-              "bR": 1.039935201993286,
-              "bG": 1.074927806779728,
-              "bB": 2.2884309755427825,
-              "cR": 1.065246176859902,
-              "cG": -1.5454409231477952,
-              "cB": -2.0560547807188962,
-              "dR": 0.006658405866993622,
-              "dG": -1.155368450325858,
-              "dB": 1.6334608346637127
-            },
-            "children": {}
-          }
-        ]
       }
     }
   },
   "externals": {
     "ui": {
-      "leftPaneActiveSection": 0,
+      "leftPaneActiveSection": 1,
       "audioExpanded": false,
       "envelopExpanded": true,
       "reaperExpanded": true,
@@ -4717,9 +3987,9 @@
         "animation": false,
         "camera": {
           "active": false,
-          "radius": 1738.2785175580098,
-          "theta": 18.61140788765624,
-          "phi": -16.49595756502822,
+          "radius": 669.2788339505215,
+          "theta": 347.428303134162,
+          "phi": 7.0815045717172325,
           "x": 0.0,
           "y": 0.0,
           "z": 0.0
@@ -4805,7 +4075,7 @@
         "pointCloud": {
           "ledStyle": 0,
           "ledStyle/name": "LENS1",
-          "pointSize": 10.0,
+          "pointSize": 8.0,
           "alphaRef": 0,
           "feather": 0.5,
           "sparkle": 1.0,
