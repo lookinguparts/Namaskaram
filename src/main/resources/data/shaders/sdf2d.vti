@@ -1,3 +1,7 @@
+
+const float SDF_PI = 3.14159265358979323846264338327950288;
+const float SDF_TAU = 3.14159265358979323846264338327950288 * 2.;
+
 float stroke(float x, float s, float w) {
     float d = step(s, x+w*.5)
     - step(s,x-w*.5);
@@ -26,6 +30,69 @@ float rectSDF(vec2 st, vec2 s) {
     return max(abs(st.x/s.x),
     abs(st.y/s.y));
 }
+
+// 14
+float vessicaSDF(vec2 st, float w) {
+    vec2 offset = vec2(w*.5, 0.);
+    return max( circleSDF(st-offset),
+                circleSDF(st+offset));
+}
+
+// 15
+float triSDF(vec2 st) {
+    st = (st*2.-1.)*2.;
+    return max(abs(st.x) * 0.866025 + st.y*0.5, -st.y*0.5);
+}
+
+// 19
+vec2 stRotate(vec2 st, float a) {
+    st = mat2(cos(a),-sin(a),
+              sin(a),cos(a))*(st-0.5);
+    return st+0.5;
+}
+
+// 26 NOTE(tracy): Can the raspi handle ints?
+float polySDF(vec2 st, float V) {
+    st = st*2.-1.;
+    float a = atan(st.x, st.y) + SDF_PI;
+    float r = length(st);
+    float v = SDF_TAU/floor(V);
+    return cos(floor(0.5+a/v)*v-a)*r;
+}
+
+// 28
+float starSDF(vec2 st, float V, float s) {
+    st = st*4.-2.;
+    float a = atan(st.y, st.x)/SDF_TAU;
+    float seg = a * floor(V);
+    a = ((floor(seg)+0.5)/floor(V) + 
+        mix(s, -s, step(.5,fract(seg)))) * SDF_TAU;
+    return abs(dot(vec2(cos(a),sin(a)), st));
+}
+
+// 30
+float raysSDF(vec2 st, float N) {
+    st -= 0.5;
+    return fract(atan(st.y, st.x)/SDF_TAU*floor(N));
+}
+
+// 34
+float heartSDF(vec2 st) {
+    st -= vec2(0.5, 0.8);
+    float r = length(st)*5.;
+    st = normalize(st);
+    return r - 
+        ((st.y*pow(abs(st.x), 0.67))/
+        (st.y+1.5)-(2.)*st.y+1.26);
+}
+
+// 35
+vec3 bridgeSDF(vec3 c, float d, float s, float w) {
+    c *= 1.-stroke(d,s,w*2.);
+    return c + stroke(d,s,w);
+}
+
+
 
 
 float HexDist(vec2 p) {

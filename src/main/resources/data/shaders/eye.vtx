@@ -1,0 +1,126 @@
+/*{
+	"DESCRIPTION": "Heart",
+	"CREDIT": "by tracyscott",
+	"ISFVSN": "2.0",
+	"CATEGORIES": [
+		"VERTEX SDF"
+	],
+	"INPUTS": [
+         {
+            "NAME": "zoom",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": -4.0,
+            "MAX": 4.0
+         },
+          {
+            "NAME": "brt",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": .1,
+            "MAX": 5.
+         },
+         {
+            "NAME": "palval",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 20.0
+         },
+         {
+            "NAME": "paloff",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 1.0
+         },
+          {
+            "NAME": "rot",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": -1.0,
+            "MAX": 1.0
+         },
+         {
+            "NAME": "thick",
+            "TYPE": "float",
+            "DEFAULT": 0.05,
+            "MIN": 0.01,
+            "MAX": 0.5
+         },
+         {
+            "NAME": "ethick",
+            "TYPE": "float",
+            "DEFAULT": 0.05,
+            "MIN": 0.01,
+            "MAX": 0.5
+         },
+         {
+            "NAME": "yoff",
+            "TYPE": "float",
+            "DEFAULT": 0.00,
+            "MIN": -2.0,
+            "MAX": 2.0
+         }
+	]
+}*/
+
+#version 330
+
+
+uniform float fTime;
+uniform float zoom;
+uniform float brt;
+uniform float palval;
+uniform float paloff;
+uniform float rot;
+uniform float thick;
+uniform float ethick;
+uniform float yoff;
+
+#include <palettes.vti>
+#include <sdf2d.vti>
+#include <consts.vti>
+
+layout(location = 0) in vec3 position;
+out vec3 outColor;
+
+mat2 Rot(float a) {
+    float s=sin(a), c=cos(a);
+    return mat2(c, -s, s, c);
+}
+
+void main() {
+    vec2 uv = position.xy;
+    
+    // Center the coordinates
+    uv = uv - 0.5;
+    float rotation = rot;
+    uv = uv * Rot(rotation*M_PI*2.);
+    
+    // Apply zoom
+    uv *= zoom;
+
+    float thickness = thick;
+    // Put back to 0 to 1 
+    uv += 0.5;
+    uv.y -= yoff;
+
+    vec3 color = vec3(0.,0.,0.);
+
+    float v1 = vessicaSDF(uv, .5);
+    vec2 uv2 = uv.yx+vec2(0.4, 0.0);
+    float v2 = vessicaSDF(uv2, 0.7);
+    vec2 circle_uv = vec2(uv.x, uv.y+yoff);
+    color += stroke(v2, 1., thickness);
+    color += fill(v2, 1.)*stroke(circleSDF(circle_uv), 0.3, ethick);
+    //color = vec3(1.,1.,1.)*stroke(circleSDF(circle_uv), 0.3, thickness);
+    // lashes
+    //color += fill(raysSDF(uv,4),.2)*fill(v1, 1.25)*step(1.,v2);
+    // Apply palette coloring
+    color = clamp(color, 0.0, 1.0);
+    color *= vec3(clamp(paletteN(paloff, palval) * brt, 0., 1.));
+    
+    //color += vec3(.2,.2,.2);
+    outColor = color;
+}

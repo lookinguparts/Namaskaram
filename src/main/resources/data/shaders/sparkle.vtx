@@ -1,0 +1,180 @@
+/*{
+	"DESCRIPTION": "Sparkle",
+	"CREDIT": "by tracyscott",
+	"ISFVSN": "2.0",
+	"CATEGORIES": [
+		"VERTEX SDF"
+	],
+	"INPUTS": [
+         {
+            "NAME": "speed",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": 0.0,
+            "MAX": 5.0
+         },
+         {
+            "NAME": "density",
+            "TYPE": "float",
+            "DEFAULT": 10.0,
+            "MIN": 1.0,
+            "MAX": 50.0
+         },
+         {
+            "NAME": "minval",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 1.0
+         },
+         {
+            "NAME": "maxval",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": 0.0,
+            "MAX": 1.0
+         },
+         {
+            "NAME": "size",
+            "TYPE": "float",
+            "DEFAULT": 0.05,
+            "MIN": 0.0,
+            "MAX": 1.0
+         },
+         {
+            "NAME": "palval",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 20.0
+         },
+         {
+            "NAME": "paloff",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 1.0
+         },
+         {
+            "NAME": "pald",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": 0.0,
+            "MAX": 1.0
+         },
+         {
+            "NAME": "rspeed",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": -5.0,
+            "MAX": 5.0
+         }
+	]
+}*/
+
+#version 330
+
+uniform float fTime;
+uniform float speed;
+uniform float density;
+uniform float minval;
+uniform float maxval;
+uniform float size;
+uniform float palval;
+uniform float paloff;
+uniform float pald;
+uniform float rspeed;
+
+#include <palettes.vti>
+#include <sdf2d.vti>
+#include <consts.vti>
+
+layout(location = 0) in vec3 position;
+out vec3 outColor;
+
+mat2 Rot(float a) {
+    float s=sin(a), c=cos(a);
+    return mat2(c, -s, s, c);
+}
+
+// Simple hash function for pseudo-random values
+float hash21(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+// 2D noise function
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    
+    float a = hash21(i);
+    float b = hash21(i + vec2(1.0, 0.0));
+    float c = hash21(i + vec2(0.0, 1.0));
+    float d = hash21(i + vec2(1.0, 1.0));
+    
+    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+}
+
+void main() {
+    vec2 uv = position.xy;
+    
+    // Center and apply rotation
+    uv = uv - 0.5;
+    float rotation = fTime * rspeed * 0.5;
+    uv = uv * Rot(rotation);
+    uv = uv + 0.5;
+    
+    // Create grid for sparkles
+    vec2 gridUV = uv * density;
+    vec2 gridID = floor(gridUV);
+    vec2 gridFract = fract(gridUV);
+    
+    vec3 color = vec3(0.0);
+    
+    // Check current cell and 8 surrounding cells for sparkles
+    for(int y = -1; y <= 1; y++) {
+        for(int x = -1; x <= 1; x++) {
+            vec2 cellID = gridID + vec2(x, y);
+            vec2 cellCenter = fract(gridFract - vec2(x, y));
+            
+            // Generate random values for this cell
+            float cellRandom = hash21(cellID);
+            float timeOffset = hash21(cellID + 100.0) * 6.28318;
+            
+            // Animated sparkle intensity
+            float sparkleTime = fTime * speed + timeOffset;
+            float sparkleIntensity = sin(sparkleTime + cellRandom * 6.28318) * 0.5 + 0.5;
+            sparkleIntensity = smoothstep(0.3, 1.0, sparkleIntensity);
+            
+            // Random position within cell
+            vec2 sparklePos = vec2(
+                hash21(cellID + 200.0),
+                hash21(cellID + 300.0)
+            );
+            
+            // Distance to sparkle center
+            float dist = length(cellCenter - sparklePos);
+            
+            // Create sparkle shape with size parameter
+            float sparkle = 1.0 - smoothstep(0.0, size, dist);
+            sparkle *= sparkleIntensity;
+            
+            // Apply min/max value range
+            sparkle = mix(minval, maxval, sparkle);
+            
+            if(sparkle > 0.0) {
+                // Generate random palette color for this sparkle
+                float palRandom = hash21(cellID + 400.0);
+                float palIndex = paloff + palRandom * pald;
+                vec3 sparkleColor = paletteN(palIndex, palval);
+                
+                color += sparkleColor * sparkle;
+            }
+        }
+    }
+    
+    outColor = clamp(color, 0.0, 1.0);
+}

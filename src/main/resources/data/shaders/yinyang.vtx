@@ -1,0 +1,172 @@
+/*{
+	"DESCRIPTION": "YinYang",
+	"CREDIT": "Tracy Scott",
+	"ISFVSN": "2.0",
+	"CATEGORIES": [
+		"VERTEX SDF"
+	],
+	"INPUTS": [
+         {
+            "NAME": "zoom",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": -4.0,
+            "MAX": 4.0
+         },
+         {
+            "NAME": "palval",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 20.0
+         },
+         {
+            "NAME": "off1",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": -10.0,
+            "MAX": 10.0
+         },
+         {
+            "NAME": "off2",
+            "TYPE": "float",
+            "DEFAULT": 0.5,
+            "MIN": -10.0,
+            "MAX": 10.0
+         },
+         {
+            "NAME": "b1",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": 0.0,
+            "MAX": 2.0
+         },
+         {
+            "NAME": "b2",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": 0.0,
+            "MAX": 2.0
+         },
+         {
+            "NAME": "rspeed",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": -5.0,
+            "MAX": 5.0
+         },
+         {
+            "NAME": "smth",
+            "TYPE": "float",
+            "DEFAULT": 0.01,
+            "MIN": 0.001,
+            "MAX": 0.1
+         }
+	]
+}*/
+
+#version 330
+
+uniform float fTime;
+uniform float zoom;
+uniform float palval;
+uniform float off1;
+uniform float off2;
+uniform float b1;
+uniform float b2;
+uniform float rspeed;
+uniform float smth;
+
+#include <palettes.vti>
+#include <sdf2d.vti>
+#include <consts.vti>
+
+layout(location = 0) in vec3 position;
+out vec3 outColor;
+
+mat2 Rot(float a) {
+    float s=sin(a), c=cos(a);
+    return mat2(c, -s, s, c);
+}
+
+float yinYangShape(vec2 uv) {
+    // Distance from center
+    float d = length(uv);
+    
+    // Main circle (outer boundary)
+    float mainCircle = smoothstep(1.0 - smth, 1.0, d);
+    
+    // Upper semicircle center
+    vec2 upperCenter = vec2(0.0, 0.5);
+    float upperDist = length(uv - upperCenter);
+    float upperCircle = smoothstep(0.5, 0.5 - smth, upperDist);
+    
+    // Lower semicircle center
+    vec2 lowerCenter = vec2(0.0, -0.5);
+    float lowerDist = length(uv - lowerCenter);
+    float lowerCircle = smoothstep(0.5, 0.5 - smth, lowerDist);
+    
+    // Small circles (dots)
+    float upperDot = smoothstep(0.15, 0.15 - smth, upperDist);
+    float lowerDot = smoothstep(0.15, 0.15 - smth, lowerDist);
+    
+    // Combine the shapes
+    float yinYang = 0.0;
+    
+    // Right side base
+    if (uv.x > 0.0) {
+        yinYang = 1.0;
+    }
+    
+    // Subtract upper semicircle from right side
+    if (uv.y > 0.0) {
+        yinYang = mix(yinYang, 0.0, upperCircle);
+    }
+    
+    // Add lower semicircle to right side
+    if (uv.y < 0.0) {
+        yinYang = mix(yinYang, 1.0, lowerCircle);
+    }
+    
+    // Add white dot in black area (upper half)
+    if (uv.y > 0.0) {
+        yinYang = mix(yinYang, 1.0, upperDot);
+    }
+    
+    // Add black dot in white area (lower half)
+    if (uv.y < 0.0) {
+        yinYang = mix(yinYang, 0.0, lowerDot);
+    }
+    
+    // Apply main circle boundary
+    yinYang *= (1.0 - mainCircle);
+    
+    return yinYang;
+}
+
+void main() {
+    vec2 uv = position.xy;
+    
+    // Center the coordinates
+    uv = uv - 0.5;
+    
+    // Apply zoom
+    uv *= zoom;
+    
+    // Apply rotation
+    float rotation = fTime * rspeed;
+    uv = uv * Rot(rotation);
+    
+    // Get yin-yang shape value (0 or 1)
+    float shape = yinYangShape(uv);
+    
+    // Select colors from palette based on shape
+    vec3 color1 = paletteN(off1, palval) * b1;
+    vec3 color2 = paletteN(off2, palval) * b2;
+    
+    // Mix colors based on shape
+    vec3 color = mix(color1, color2, shape);
+    
+    // Clamp final color
+    outColor = clamp(color, 0.0, 1.0);
+}

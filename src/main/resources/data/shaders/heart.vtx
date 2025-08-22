@@ -1,0 +1,102 @@
+/*{
+	"DESCRIPTION": "Heart",
+	"CREDIT": "by tracyscott",
+	"ISFVSN": "2.0",
+	"CATEGORIES": [
+		"VERTEX SDF"
+	],
+	"INPUTS": [
+         {
+            "NAME": "zoom",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": -4.0,
+            "MAX": 4.0
+         },
+          {
+            "NAME": "brt",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": .1,
+            "MAX": 5.
+         },
+         {
+            "NAME": "palval",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 20.0
+         },
+         {
+            "NAME": "paloff",
+            "TYPE": "float",
+            "DEFAULT": 0.0,
+            "MIN": 0.0,
+            "MAX": 1.0
+         },
+          {
+            "NAME": "rspeed",
+            "TYPE": "float",
+            "DEFAULT": 1.0,
+            "MIN": 0.0,
+            "MAX": 10.0
+         },
+         {
+            "NAME": "blend",
+            "TYPE": "float",
+            "DEFAULT": 0.01,
+            "MIN": 0.0,
+            "MAX": 0.5
+         }
+	]
+}*/
+
+#version 330
+
+
+uniform float fTime;
+uniform float zoom;
+uniform float brt;
+uniform float palval;
+uniform float paloff;
+uniform float rspeed;
+uniform float blend;
+
+#include <palettes.vti>
+#include <sdf2d.vti>
+#include <consts.vti>
+
+layout(location = 0) in vec3 position;
+out vec3 outColor;
+
+mat2 Rot(float a) {
+    float s=sin(a), c=cos(a);
+    return mat2(c, -s, s, c);
+}
+
+void main() {
+    vec2 uv = position.xy;
+    
+    // Center the coordinates
+    uv = uv - 0.5;
+    float rotation = fTime * rspeed * 0.5;
+    uv = uv * Rot(rotation);
+    
+    // Apply zoom
+    uv *= zoom;
+
+    // Put back to 0 to 1 for spirit deck
+    uv += 0.5;
+
+    vec3 color = vec3(0.,0.,0.);
+
+    color += smoothstep(blend, 0.0, heartSDF(uv));
+    
+    // Distance for palette calculation
+    //float pal_d = length(uv);
+    
+    // Apply palette coloring
+    color *= vec3(clamp(paletteN(paloff, palval) * brt, 0., 1.));
+    
+    outColor = color;
+}
