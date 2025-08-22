@@ -1,6 +1,6 @@
 {
   "version": "1.1.1-SNAPSHOT",
-  "timestamp": 1755854726421,
+  "timestamp": 1755854951997,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -1012,11 +1012,11 @@
               "compositeMode/name": "PLAYLIST",
               "compositeDampingEnabled": true,
               "compositeDampingTimeSecs": 0.1,
-              "autoCycleEnabled": false,
+              "autoCycleEnabled": true,
               "autoCycleMode": 0,
               "autoCycleMode/name": "NEXT",
               "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
+              "transitionEnabled": true,
               "transitionTimeSecs": 2.0,
               "transitionBlendMode": 0,
               "focusedPattern": 0,
