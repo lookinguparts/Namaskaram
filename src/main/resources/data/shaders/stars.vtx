@@ -155,11 +155,11 @@ vec3 StarLayer(vec2 uv) {
     
     vec3 col = vec3(0., 0., 0.);
     for (float y=-1.; y <=1.; y++) {
-        for (float x=-1; x<=1.; x++) {
+        for (float x=-1.; x<=1.; x++) {
             vec2 offs = vec2(x, y);
             float n = Hash21(id+offs);
             float size = fract(n*345.32);
-            float star = Star(gv-offs-vec2(n, fract(n*10))+.5, smoothstep(size, .1, 1.));
+            float star = Star(gv-offs-vec2(n, fract(n*10.))+.5, smoothstep(size, .1, 1.));
             
             // Use palette for star colors
             float palIndex = paloff + fract(n*2345.2);
